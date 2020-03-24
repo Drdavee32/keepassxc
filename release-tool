@@ -1211,7 +1211,7 @@ appsign() {
                 fi
 
                 logInfo "Signing app..."
-                xcrun codesign --sign "${key}" --verbose --deep --entitlements \
+                xcrun codesign --sign "${key}" --verbose --deep --options runtime --entitlements \
                     "${real_src_dir}/share/macosx/keepassxc.entitlements" ./app/KeePassXC.app
 
                 if [ 0 -ne $? ]; then
